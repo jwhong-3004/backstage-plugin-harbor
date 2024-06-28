@@ -15,7 +15,7 @@ export function HarborRepository(props: RepositoryProps) {
 
   const { loading } = useAsync(async () => {
     const response = await fetch(
-      `${backendUrl}/api/harbor/artifacts?project=${props.project}&repository=${props.repository}`
+      `${backendUrl}/api/v2.0/projects/${props.project}/repositories/${props.repository}/artifacts`
     )
     const json = await response.json()
 
